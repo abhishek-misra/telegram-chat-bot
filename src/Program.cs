@@ -50,7 +50,7 @@ async Task HandleUpdateAsync(ITelegramBotClient botClient, Update update, Cancel
             text: "I am fine! What about you?",
             cancellationToken: cancellationToken);
     }
-    else if (messageText?.ToLower() == "name")
+    else if (messageText?.Equals("name", StringComparison.InvariantCultureIgnoreCase) == true)
     {
         Message sentMessage = await botClient.SendTextMessageAsync(
             chatId: chatId,
