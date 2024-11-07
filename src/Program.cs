@@ -9,7 +9,7 @@ var botClient = new TelegramBotClient("<Your Token>");
 
 using CancellationTokenSource cts = new();
 
-// StartReceiving does not block the caller thread. Receiving is done on the ThreadPool.
+// Start Receiving does not block the caller thread. Receiving is done on the ThreadPool.
 ReceiverOptions receiverOptions = new()
 {
     AllowedUpdates = Array.Empty<UpdateType>() // receive all update types except ChatMember related updates
@@ -66,7 +66,6 @@ async Task HandleUpdateAsync(ITelegramBotClient botClient, Update update, Cancel
     }
 
     // Echo received message text
-  
 }
 
 Task HandlePollingErrorAsync(ITelegramBotClient botClient, Exception exception, CancellationToken cancellationToken)
